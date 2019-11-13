@@ -11,6 +11,7 @@
           "GitHub": "1.16.0",
           "Microsoft.NET.Test.Sdk": "16.2.0",
           "NUnit3TestAdapter": "3.13.0",
+          "Selenium.Chrome.WebDriver": "77.0.0",
           "Selenium.WebDriver": "3.141.0",
           "Selenium.WebDriver.ChromeDriver": "78.0.3904.7000",
           "NUnit": "3.12.0"
@@ -474,6 +475,7 @@
           "Microsoft.NETCore.Targets": "1.1.0"
         }
       },
+      "Selenium.Chrome.WebDriver/77.0.0": {},
       "Selenium.WebDriver/3.141.0": {
         "dependencies": {
           "Newtonsoft.Json": "10.0.3"
@@ -1226,6 +1228,13 @@
       "sha512": "sha512-c/qWt2LieNZIj1jGnVNsE2Kl23Ya2aSTBuXMD6V7k9KWr6l16Tqdwq+hJScEpWER9753NWC8h96PaVNY5Ld7Jw==",
       "path": "runtime.native.system/4.3.0",
       "hashPath": "runtime.native.system.4.3.0.nupkg.sha512"
+    },
+    "Selenium.Chrome.WebDriver/77.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ka6fIW0F8LYZLg8UsxLy/BP8EAqmA6a3eUlp41lU3Ft2FaBKIEubVgmbtehULdUejVFhMZQ+WXPjeQffuzVWHw==",
+      "path": "selenium.chrome.webdriver/77.0.0",
+      "hashPath": "selenium.chrome.webdriver.77.0.0.nupkg.sha512"
     },
     "Selenium.WebDriver/3.141.0": {
       "type": "package",

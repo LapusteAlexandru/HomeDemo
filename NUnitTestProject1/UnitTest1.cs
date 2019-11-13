@@ -12,9 +12,9 @@ namespace NUnitTestProject1
         [SetUp]
         public void Setup()
         {
-            var cap = new ChromeOptions();
-            cap.AddArgument("--start-maximized");
-            IWebDriver driver = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), cap);
+
+            driver = new ChromeDriver();
+            driver.Navigate().GoToUrl("http://www.google.com");
         }
 
         [Test]

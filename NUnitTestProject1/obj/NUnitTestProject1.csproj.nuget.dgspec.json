@@ -50,6 +50,10 @@
               "target": "Package",
               "version": "[3.13.0, )"
             },
+            "Selenium.Chrome.WebDriver": {
+              "target": "Package",
+              "version": "[77.0.0, )"
+            },
             "Selenium.WebDriver": {
               "target": "Package",
               "version": "[3.141.0, )"
