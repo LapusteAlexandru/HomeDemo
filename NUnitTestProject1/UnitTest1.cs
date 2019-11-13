@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 
 namespace NUnitTestProject1
 {
@@ -12,6 +13,7 @@ namespace NUnitTestProject1
         [Test]
         public void Test1()
         {
+            Console.WriteLine("Test");
             Assert.Pass();
         }
     }
