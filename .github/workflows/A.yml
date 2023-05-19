@@ -27,10 +27,13 @@ jobs:
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
+    - name: Set Variable
+      run: echo "MY_VARIABLE=123" >> $GITHUB_ENV
+
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
-        name: myArtifact
-        path: ${{ github.workspace }}
+        name: my-artifact
+        path: ${{ runner.temp }}/my-artifact.txt
 
  
