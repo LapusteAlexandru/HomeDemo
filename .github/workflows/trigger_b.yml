@@ -18,5 +18,7 @@ jobs:
           client-payload: |
             {
               "completedBy": "${{ github.actor }}",
-              "commitSha": "${{ github.sha }}"
+              "commitSha": "${{ github.sha }}",
+              "value1": "Hello",
+              "value2": "World"
             }
