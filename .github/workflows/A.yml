@@ -21,13 +21,16 @@ jobs:
 
    
     steps:
-    - name: Step in Action A
-      id: stepA
-      run: |
-        echo "::set-output name=myOutput::Hello from Action A"
+    - name: Set Variable
+      run: echo "::set-output name=myVariable::someValue"
     - name: Checkout
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: myArtifact
+        path: ${{ github.workspace }}
 
  
