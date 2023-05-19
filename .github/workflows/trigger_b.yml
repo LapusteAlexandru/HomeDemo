@@ -1,0 +1,22 @@
+name: Trigger B
+on:
+  workflow_run:
+    workflows: ["A"]
+    types:
+      - completed
+
+jobs:
+  trigger-action-d:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Action B
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          repository: LapusteAlexandru/PP
+          event-type: run-action-d
+          client-payload: |
+            {
+              "completedBy": "${{ github.actor }}",
+              "commitSha": "${{ github.sha }}"
+            }
