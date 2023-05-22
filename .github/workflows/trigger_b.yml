@@ -9,13 +9,24 @@ jobs:
   trigger-action-d:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger Action B
-        uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          repository: LapusteAlexandru/PP
-          event-type: run-action-d
-          client-payload: |
-            {
-              "value1": "Test"
-            }
+    
+    - name: Download Artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: my-artifact
+        
+    - name: Read Variable Value
+      run: |
+        value=$(cat variable.txt)
+        echo "Variable Value: $value"
+        
+    - name: Trigger Action B
+      uses: peter-evans/repository-dispatch@v1
+      with:
+        token: ${{ secrets.ACCESS_TOKEN }}
+        repository: LapusteAlexandru/PP
+        event-type: run-action-d
+        client-payload: |
+          {
+            "Env": $(cat variable.txt)
+          }
