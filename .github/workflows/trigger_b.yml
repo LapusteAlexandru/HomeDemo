@@ -4,7 +4,8 @@ on:
     workflows: ["A"]
     types:
       - completed
-
+env:
+  ENV: "initial_value"
 jobs:
   trigger-action-d:
     runs-on: ubuntu-latest
@@ -19,15 +20,17 @@ jobs:
     - name: Read Variable Value
       run: |
         value=$(cat variable.txt)
-        echo "Variable Value: $value"
+        echo "ENV=$value" >> $GITHUB_ENV
         
     - name: Trigger Action B
-      uses: peter-evans/repository-dispatch@v1
+      uses: peter-evans/repository-dispatch@v1x
       with:
         token: ${{ secrets.ACCESS_TOKEN }}
         repository: LapusteAlexandru/PP
         event-type: run-action-d
+        run: |
+          value=$(cat variable.txt)
         client-payload: |
           {
-            "Env": "$value"
+            "Env": "${{ env.ENV }}"
           }
