@@ -9,8 +9,6 @@ jobs:
   trigger-action-d:
     runs-on: ubuntu-latest
     steps:
-      - name: Display Output Value
-        run: echo "Output value:" ${{ github.event.workflow_run.outputs.myOutput }}
       - name: Trigger Action B
         uses: peter-evans/repository-dispatch@v1
         with:
@@ -19,5 +17,5 @@ jobs:
           event-type: run-action-d
           client-payload: |
             {
-              "value1": "${{ github.event.workflow_run.outputs.myOutput }}"
+              "value1": "Test"
             }
