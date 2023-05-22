@@ -12,7 +12,8 @@ on:
       my_input_param:
         description: 'My input parameter'
         required: true
-
+env:
+  ENVIRONMENT: "initial_value"
 jobs:
   actionA:
 
@@ -22,6 +23,6 @@ jobs:
  
     steps:
     - name: Change Variable Value
-      run: echo "::set-env name=ENVIRONMENT::Stage"
+      run: echo "ENVIRONMENT=Stage" >> $GITHUB_ENV
 
  
