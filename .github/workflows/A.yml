@@ -23,6 +23,6 @@ jobs:
  
     steps:
     - name: Change Variable Value
-      run: echo "ENVIRONMENT=Stage" >> $GITHUB_ENV
+      run: echo "ENV_DATA= Staging" >> $GITHUB_ENV
 
  
