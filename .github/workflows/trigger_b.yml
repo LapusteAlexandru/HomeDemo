@@ -17,8 +17,5 @@ jobs:
           event-type: run-action-d
           client-payload: |
             {
-              "completedBy": "${{ github.actor }}",
-              "commitSha": "${{ github.sha }}",
-              "value1": "Hello",
-              "value2": "World"
+              "value1": $ENVIRONMENT,
             }
