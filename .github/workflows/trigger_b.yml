@@ -23,7 +23,4 @@ jobs:
         token: ${{ secrets.ACCESS_TOKEN }}
         repository: LapusteAlexandru/PP
         event-type: run-action-d
-        client-payload: |
-          {
-            "env": "${{ env.DEPLOY }}"
-          }
+        client-payload: '{"env": "${{ env.DEPLOY }}"}'
