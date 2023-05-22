@@ -19,19 +19,11 @@ jobs:
                              # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
 
     steps:
-      - name: Set Output Value
-        id: set_output
-        run: echo "::set-output name=ENVIRONMENT::Sage"
-      
-      - name: Display Output Value
-        run: echo "Output value:" ${{ steps.set_output.outputs.ENVIRONMENT }}
-      - name: Trigger Action B
-        uses: peter-evans/repository-dispatch@v1
+      - name: Set Variable Value
+        run: echo "Stage" > variable.txt
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
         with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          repository: LapusteAlexandru/PP
-          event-type: get_env
-          client-payload: |
-            {
-              "Env": "${{ steps.set_output.outputs.ENVIRONMENT }}"
-            }
+          name: my-artifact
+          path: variable.txt
