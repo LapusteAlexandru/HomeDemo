@@ -29,5 +29,5 @@ jobs:
         event-type: run-action-d
         client-payload: |
           {
-            "Env": $value
+            "Env": "$value"
           }
