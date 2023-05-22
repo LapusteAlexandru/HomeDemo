@@ -24,5 +24,7 @@ jobs:
     steps:
     - name: Change Variable Value
       run: echo "ENV_DATA= Staging" >> $GITHUB_ENV
-
+    - name: Display data
+      run: |
+        echo "Shared Data: $ENV_DATA"
  
