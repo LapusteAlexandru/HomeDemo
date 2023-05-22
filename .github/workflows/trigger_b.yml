@@ -17,5 +17,5 @@ jobs:
           event-type: run-action-d
           client-payload: |
             {
-              "value1": $ENVIRONMENT,
+              "value1": ${{ env.REPO_VARIABLE }},
             }
