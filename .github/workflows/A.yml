@@ -12,8 +12,6 @@ on:
       my_input_param:
         description: 'My input parameter'
         required: true
-env:
-  ENV_DATA: "initial_value"
 jobs:
   actionA:
 
@@ -25,4 +23,6 @@ jobs:
       - name: Set Output Value
         id: set_output
         run: echo "::set-output name=myOutput::Stage"
+      - name: Display Output Value
+        run: echo "Output value:" ${{ steps.set_output.outputs.myOutput }}
  
