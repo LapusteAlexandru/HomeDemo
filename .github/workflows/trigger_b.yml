@@ -14,7 +14,7 @@ jobs:
       uses: dawidd6/action-download-artifact@v2
       with:
         workflow: ${{ github.event.workflow_run.workflow_id }}
-        workflow_conclusion: success
+        name: my-artifact
         
     - name: Read Variable Value
       run: |
