@@ -23,7 +23,7 @@ jobs:
         echo "ENV=$value" >> $GITHUB_ENV
         
     - name: Trigger Action B
-      uses: peter-evans/repository-dispatch@v1x
+      uses: peter-evans/repository-dispatch@v1
       with:
         token: ${{ secrets.ACCESS_TOKEN }}
         repository: LapusteAlexandru/PP
