@@ -28,5 +28,5 @@ jobs:
         event-type: run-action-d
         client-payload: |
           {
-            "Env": "${{ env.DEPLOY }}"
+            "Env": ${{ env.DEPLOY }}
           }
