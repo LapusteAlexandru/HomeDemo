@@ -21,19 +21,11 @@ jobs:
 
    
     steps:
-    - name: Set Variable
-      run: echo "::set-output name=myVariable::someValue"
     - name: Checkout
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
-    - name: Set Variable
-      run: echo "MY_VARIABLE=123" >> $GITHUB_ENV
-
-    - name: Upload Artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: my-artifact
-        path: ${{ runner.temp }}/my-artifact.txt
+    - name: Change Variable Value
+      run: echo "::set-env name=ENVIRONMENT::Stage"
 
  
