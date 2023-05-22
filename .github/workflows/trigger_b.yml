@@ -14,13 +14,16 @@ jobs:
         workflow: ${{ github.event.workflow_run.workflow_id }}
         name: my-artifact
     - name: Read Variable Value
+      id: read-variable
       run: |
-        value=$(cat variable.txt)
-        echo "DEPLOY=$value" >> $GITHUB_ENV
+        echo "::set-output name=deploy::$(cat variable.txt)"
     - name: Trigger Action B
       uses: peter-evans/repository-dispatch@v1
       with:
         token: ${{ secrets.ACCESS_TOKEN }}
         repository: LapusteAlexandru/PP
         event-type: run-action-d
-        client-payload: '{"env": "${{ env.DEPLOY }}"}'
+        client-payload: |
+          {
+            "env": "${{ steps.read-variable.outputs.deploy }}"
+          }
