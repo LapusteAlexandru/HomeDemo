@@ -1,6 +1,6 @@
 
 
-name: Deploy
+name: Deployz
 
 on:
   push:
