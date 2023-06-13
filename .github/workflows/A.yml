@@ -1,6 +1,6 @@
 
 
-name: A
+name: Run tests
 
 on:
   push:
