@@ -1,6 +1,6 @@
 
 
-name: deploy
+name: A
 
 on:
   push:
