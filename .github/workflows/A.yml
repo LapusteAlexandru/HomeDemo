@@ -7,23 +7,14 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-  workflow_dispatch:
-    inputs:
-      my_input_param:
-        description: 'My input parameter'
-        required: true
 jobs:
-  actionA:
-
-    runs-on: windows-latest  # For a list of available runner types, refer to
-                             # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
-
+  trigger-action-d:
+    runs-on: ubuntu-latest
     steps:
-      - name: Set Variable Value
-        run: echo "Stage" > variable.txt
-
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: my-artifact
-          path: variable.txt
+    
+    - name: Trigger Action D
+      uses: peter-evans/repository-dispatch@v1
+      with:
+        token: ${{ secrets.ACCESS_TOKEN }}
+        repository: LapusteAlexandru/PP
+        event-type: run-action-d
