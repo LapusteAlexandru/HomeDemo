@@ -1,6 +1,6 @@
 
 
-name: run tests
+name: deploy
 
 on:
   push:
